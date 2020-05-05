@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <br/>
+        <br/>
+        <!--p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find An Awesome Deal!</a></p-->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><strong>Latest News</strong></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <p><strong>{{news.title}}</strong></p>
+          <p>{{news.paragraph}}</p>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9" >
+        <h4><strong>Featured Mars Image</strong></h4>
+        <img src="{{featured_image.featured_image}}" alt="Image" height="800" width="800">
+        <br><br>
+      </div>
+      <div class="col-md-3" >
+        <div class="row card">
+          <div class="col-md-12 card-body">
+            <p><strong>Current Weather on Mars</strong></p>
+            <p>{{weather.description}}</p>
+          </div>
+        </div>
+        <div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <p><strong>Mars Facts</strong></p>
+              <table>
+                {% for key, value in facts.items() %}
+                  {% if key != "_id" %}
+                  <tr>
+                    <td>
+                      <p>{{ key }}</p>
+                    </td>
+                    <td>
+                      <p>{{ value }}</p>
+                    </td>
+                  </tr>
+                  {% endif %}
+                  {% endfor %}
+              </table>
+            </div>  
+        </div>
+      </div>
+
+        
+
+        
+      
+    </div>
+                
+  </div>
+</body>
+
+</html>
